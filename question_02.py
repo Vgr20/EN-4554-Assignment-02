@@ -16,11 +16,11 @@ def compute_squared_distances_optimized(A, B):
     B_exp = B[np.newaxis, :, :]  # Expand B to shape (1, n, d)
     
     # Compute the pairwise squared differences
-    D = np.sum((A_exp - B_exp)**2, axis=2) ** 0.5 # Sum over the last axis (dimension)
+    D = np.sum((A_exp - B_exp)**2, axis=2)# Sum over the last axis (dimension)
 
     # The following code will also perform a similar operation 
     # Compute the Euclidean norm (L2) across the last axis and square the result
-    # D = np.linalg.norm(A_exp - B_exp, axis=2) 
+    # D = np.linalg.norm(A_exp - B_exp, axis=2) ** 2
 
     return D
 
